@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101b19"><title>ORA 5 Ultra · AC Charge Planner</title>
+<style>
+:root{--bg:#f3f6f4;--card:#fff;--ink:#15221f;--muted:#72807b;--line:#e4ebe7;--dark:#101b19;--soft:#eaf7ef;--green:#176b4b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{max-width:960px;margin:auto;padding:25px 18px 40px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.brand{font-size:12px;letter-spacing:.15em;font-weight:800;color:var(--green)}.tag{font-size:11px;color:var(--muted);border:1px solid var(--line);background:white;border-radius:99px;padding:7px 11px}.hero{background:var(--dark);color:white;border-radius:24px;padding:27px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#2b7556,transparent 70%);right:-85px;top:-130px;opacity:.7}.inside{position:relative;z-index:1}.eyebrow{font-size:11px;letter-spacing:.16em;color:#9be2bd;font-weight:800}.hero h1{font-size:clamp(28px,5vw,42px);line-height:1.08;letter-spacing:-.04em;margin:10px 0}.hero p{font-size:14px;color:#b7c6bf;margin:0}.specs{display:flex;gap:24px;flex-wrap:wrap;margin-top:22px}.spec strong{display:block;font-size:20px}.spec span{font-size:11px;color:#a9b8b1}.layout{display:grid;grid-template-columns:1.05fr .95fr;gap:17px;margin-top:17px}.card{background:white;border:1px solid var(--line);border-radius:21px;padding:21px;box-shadow:0 8px 26px #122a1f08}.card h2{font-size:17px;margin:0 0 5px}.sub{font-size:12px;color:var(--muted);margin:0 0 18px}.field{margin:16px 0}.labelrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.label{font-size:13px;font-weight:700}.value{font-size:13px;font-weight:800;color:var(--green)}input[type=range]{width:100%;accent-color:#25865d}input[type=number],input[type=time]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:11px;font:inherit;font-size:14px;background:#fbfdfb;outline:none}input:focus{border-color:#65b88c;box-shadow:0 0 0 3px #dff4e7}.two{display:grid;grid-template-columns:1fr 1fr;gap:11px}.unit small{display:block;color:var(--muted);font-size:11px;margin-top:5px}.result{background:var(--soft);border:1px solid #d6efdf;border-radius:17px;padding:19px;margin-top:16px}.result-label{font-size:10px;letter-spacing:.13em;font-weight:800;color:#39785a}.time{font-size:clamp(35px,6vw,50px);font-weight:850;letter-spacing:-.05em;margin:6px 0;color:#164b35;font-variant-numeric:tabular-nums}.finish{font-size:13px;color:#49715d}.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}.stat{background:white;border:1px solid #dcefe3;border-radius:12px;padding:11px}.stat span{display:block;color:var(--muted);font-size:11px}.stat strong{font-size:16px;display:block;margin-top:4px}.progress{margin-top:19px}.progresshead{display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:8px}.track{height:10px;border-radius:99px;background:#e9efeb;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,#62c88f,#176b4b);border-radius:99px}.note{font-size:11px;color:var(--muted);line-height:1.6;margin:14px 2px 0}.actions{display:flex;gap:9px;margin-top:14px}.btn{border:0;border-radius:11px;padding:10px 14px;font-weight:750;font-size:12px;cursor:pointer}.primary{background:#176b4b;color:white}.secondary{background:#f0f4f1;color:#40544a}.footer{text-align:center;color:#9aa7a0;font-size:11px;margin-top:18px}@media(max-width:700px){.wrap{padding:15px 12px 30px}.hero{padding:22px 20px;border-radius:19px}.layout{grid-template-columns:1fr}.card{padding:18px}.specs{gap:17px}.two{gap:8px}}
+</style>
+<style>
+:root{--bg:#080b0a;--card:#111715;--ink:#edf4f0;--muted:#87958e;--line:#26332d;--dark:#050807;--soft:#13251c;--green:#8ee5b5}
+body{background:radial-gradient(ellipse at 50% -15%,#1b3328 0%,#0a100d 42%,#070a09 78%);color:var(--ink)}
+.brand{color:#8ee5b}.tag{background:#111715;color:#b6c3bc;border-color:#2b3932}
+.hero{background:linear-gradient(125deg,#111916,#070b09 70%);border:1px solid #2a3c32;box-shadow:0 18px 50px #0008}
+.hero:after{background:radial-gradient(circle,#2a8b5b 0%,rgba(43,117,86,0) 70%);opacity:.45}
+.hero p,.spec span{color:#9eafa6}.eyebrow{color:#8ee5b5}
+.card{background:linear-gradient(145deg,#151d19,#101613);border-color:#29372f;box-shadow:0 12px 35px #0005}
+.sub,.note{color:#94a39b}.label{color:#e6eee9}.value{color:#8ee5b5}
+input[type=number],input[type=time]{background:#0a100d;color:#f0f7f2;border-color:#34443a;color-scheme:dark}
+input:focus{border-color:#68c994;box-shadow:0 0 0 3px #1c4b32}
+input[type=range]{accent-color:#75d9a0}
+.result{background:linear-gradient(145deg,#142c20,#102018);border-color:#28553b}
+.result-label{color:#8ee5b5}.time{color:#b5f3ce}.finish{color:#a8cdb6}
+.stat{background:#0d1511;border-color:#2b4033}.stat span{color:#93a69a}.stat strong{color:#eaf7ef}
+.track{background:#26352c}.bar{background:linear-gradient(90deg,#a3f0c2,#2c9a61)}
+.primary{background:#8ee5b5;color:#092015}.secondary{background:#26332c;color:#d9e8df}
+.footer{color:#66756c}
+</style>
+</head><body><main class="wrap">
+<div class="top"><div class="brand">CHARGE LAB <span style="color:#a4b1aa">/ PERSONAL TOOL</span></div><div class="tag">AC CHARGING · ESTIMATOR</div></div>
+<section class="hero"><div class="inside"><div class="eyebrow">YOUR EV CHARGING PLANNER</div><h1>ORA 5 Ultra<br>AC Charge Time</h1><p>วางแผนเวลาชาร์จแบตเตอรี่ที่บ้านแบบเข้าใจง่าย</p><div class="specs"><div class="spec"><strong>58.3 kWh</strong><span>Battery capacity · editable</span></div><div class="spec"><strong>6.6 kW</strong><span>Maximum AC · reference</span></div><div class="spec"><strong>AC</strong><span>Charging mode</span></div></div></div></section>
+<div class="layout"><section class="card"><h2>ตั้งค่าการชาร์จ</h2><p class="sub">ปรับค่าตามสถานการณ์จริงของคุณ</p>
+<div class="field"><div class="labelrow"><label class="label" for="start">แบตเตอรี่เริ่มต้น</label><span class="value" id="startVal">20%</span></div><input id="start" type="range" min="0" max="99" value="20"></div>
+<div class="field"><div class="labelrow"><label class="label" for="target">แบตเตอรี่เป้าหมาย</label><span class="value" id="targetVal">80%</span></div><input id="target" type="range" min="1" max="100" value="80"></div>
+<div class="two"><div class="field unit"><label class="label" for="capacity">ความจุแบตเตอรี่</label><input id="capacity" type="number" min="1" max="200" step=".1" value="58.3"><small>kWh</small></div><div class="field unit"><label class="label" for="power">กำลังไฟ AC</label><input id="power" type="number" min=".5" max="22" step=".1" value="6.6"><small>kW · สูงสุดอ้างอิง 6.6</small></div></div>
+<div class="two"><div class="field unit"><label class="label" for="eff">ประสิทธิภาพการชาร์จ</label><input id="eff" type="number" min="50" max="100" step="1" value="90"><small>% · สมมติฐานปรับได้</small></div><div class="field unit"><label class="label" for="unplug">ต้องการถอดสายชาร์จตอน</label><input id="unplug" type="time" value="07:00"><small>ระบบคำนวณเวลาเสียบชาร์จให้อัตโนมัติ</small></div></div>
+<div class="actions"><button class="btn primary" id="reset">คืนค่าเริ่มต้น</button><button class="btn secondary" id="swap">สลับ SOC</button></div>
+<p class="note">หมายเหตุ: เวลาเป็นค่าประมาณจากกำลังไฟเฉลี่ยที่ตั้งไว้ โดยคิดประสิทธิภาพ AC ตามสมมติฐาน ไม่ได้จำลองการลดกำลังชาร์จตามอุณหภูมิหรือระบบจัดการแบตเตอรี่</p></section>
+<section class="card"><h2>ผลการคำนวณ</h2><p class="sub">ผลลัพธ์จะเปลี่ยนทันทีเมื่อปรับค่า</p><div class="result"><div class="result-label">ESTIMATED CHARGING TIME</div><div class="time" id="duration">6 ชม. 01 นาที</div><div class="finish" id="finish">ชาร์จเสร็จประมาณ 04:01 น. (วันถัดไป)</div><div class="stats"><div class="stat"><span>พลังงานที่ต้องเติมเข้ารถ</span><strong id="energy">35.0 kWh</strong></div><div class="stat"><span>พลังงานจากไฟบ้านโดยประมาณ</span><strong id="inputEnergy">38.9 kWh</strong></div></div></div>
+<div class="progress"><div class="progresshead"><span>Charging progress</span><span id="rangeText">20% → 80%</span></div><div class="track"><div class="bar" id="bar" style="width:60%"></div></div></div>
+<div class="stats"><div class="stat"><span>ระดับแบตเตอรี่ที่เพิ่มขึ้น</span><strong id="increase">+60%</strong></div><div class="stat"><span>กำลังไฟที่ใช้คำนวณ</span><strong id="usedPower">6.6 kW</strong></div></div><p class="note" id="warning" aria-live="polite"></p></section></div>
+<div class="footer">ORA 5 ULTRA · AC CHARGE TIME ESTIMATOR · PERSONAL PROJECT</div></main>
+<script>
+const $=id=>document.getElementById(id),ids=['start','target','capacity','power','eff','unplug'];
+const fmt=n=>n.toLocaleString('en-US',{maximumFractionDigits:1,minimumFractionDigits:1});
+function calc(){let s=+$('start').value,t=+$('target').value,c=+$('capacity').value,p=+$('power').value,e=+$('eff').value;
+$('startVal').textContent=s+'%';$('targetVal').textContent=t+'%';$('rangeText').textContent=s+'% → '+t+'%';$('increase').textContent=(t>=s?'+':'')+(t-s)+'%';$('bar').style.width=Math.max(0,Math.min(100,t-s))+'%';
+if(t<=s){$('duration').textContent='—';$('finish').textContent='เป้าหมายต้องสูงกว่าแบตเตอรี่เริ่มต้น';$('energy').textContent='—';$('inputEnergy').textContent='—';$('warning').textContent='กรุณาปรับเปอร์เซ็นต์เป้าหมายให้มากกว่าค่าเริ่มต้น';return}
+if(!c||!p||!e||c<=0||p<=0||e<=0||e>100){$('duration').textContent='ตรวจสอบค่า';$('finish').textContent='กรุณากรอกค่าความจุ กำลังไฟ และประสิทธิภาพให้ถูกต้อง';$('warning').textContent='';return}
+let kwh=c*(t-s)/100,grid=kwh/(e/100),mins=Math.round(grid/p*60),h=Math.floor(mins/60),m=mins%60;
+$('duration').textContent=(h?`${h} ชม. `:'')+`${String(m).padStart(2,'0')} นาที`;$('energy').textContent=fmt(kwh)+' kWh';$('inputEnergy').textContent=fmt(grid)+' kWh';$('usedPower').textContent=fmt(p)+' kW';
+let [hh,mm]=$('unplug').value.split(':').map(Number),finish=hh*60+mm,start=finish-mins,days=Math.floor(start/1440),clock=((start%1440)+1440)%1440;
+$('finish').textContent='ควรเสียบชาร์จประมาณ '+String(Math.floor(clock/60)).padStart(2,'0')+':'+String(clock%60).padStart(2,'0')+' น.'+(days<0?' (วันก่อนหน้า)':days===0?' (วันเดียวกัน)':days===1?' (วันก่อนหน้า)':` (${days} วันก่อนหน้า)`);
+$('warning').textContent=p>6.6?'กำลังไฟที่กรอกสูงกว่าค่าสูงสุด AC อ้างอิง 6.6 kW ของรถ โปรดตรวจสอบสเปกอีกครั้ง':'ผลคำนวณเป็นค่าประมาณ การชาร์จจริงอาจใช้เวลาต่างออกไป';}
+ids.forEach(id=>$(id).addEventListener('input',calc));
+$('reset').onclick=()=>{$('start').value=20;$('target').value=80;$('capacity').value=58.3;$('power').value=6.6;$('eff').value=90;$('unplug').value='07:00';calc()};
+$('swap').onclick=()=>{let a=+$('start').value,b=+$('target').value;if(b<100){$('start').value=b;$('target').value=a;calc()}};calc();
+</script></body></html>
