@@ -22,9 +22,8 @@ input[type=range]{accent-color:#75d9a0}
 .track{background:#26352c}.bar{background:linear-gradient(90deg,#a3f0c2,#2c9a61)}
 .primary{background:#8ee5b5;color:#092015}.secondary{background:#26332c;color:#d9e8df}
 .footer{color:#66756c}
-/* Dropdown styling */
-select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:11px;font:inherit;font-size:14px;background:#fbfdfb;outline:none;cursor:pointer}
-select:focus{border-color:#65b88c;box-shadow:0 0 0 3px #dff4e7}
+select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:11px;font:inherit;font-size:14px;background:#0a100d;color:#f0f7f2;border-color:#34443a;outline:none;cursor:pointer;color-scheme:dark}
+select:focus{border-color:#68c994;box-shadow:0 0 0 3px #1c4b32}
 </style>
 </head><body><main class="wrap">
 <div class="top"><div class="brand">CHARGE LAB <span style="color:#a4b1aa">/ PERSONAL TOOL</span></div><div class="tag">AC CHARGING · ESTIMATOR</div></div>
@@ -41,26 +40,25 @@ select:focus{border-color:#65b88c;box-shadow:0 0 0 3px #dff4e7}
 <div class="layout"><section class="card"><h2>ตั้งค่าการชาร์จ</h2><p class="sub">ปรับค่าตามสถานการณ์จริงของคุณ</p>
 <div class="field"><div class="labelrow"><label class="label" for="start">แบตเตอรี่เริ่มต้น</label><span class="value" id="startVal">20%</span></div><input id="start" type="range" min="0" max="99" value="20"></div>
 <div class="field"><div class="labelrow"><label class="label" for="target">แบตเตอรี่เป้าหมาย</label><span class="value" id="targetVal">80%</span></div><input id="target" type="range" min="1" max="100" value="80"></div>
-<div class="two"><div class="field unit"><label class="label" for="capacity">ความจุแบตเตอรี่</label><input id="capacity" type="number" min="1" max="200" step=".1" value="58.3"><small>kWh</small></div><div class="field unit"><label class="label" for="power">กำลังไฟ AC</label><input id="power" type="number" min=".5" max="22" step=".1" value="6.6"><small>kW · สูงสุดอ้างอิง 6.6</small></div></div>
+<div class="two"><div class="field unit"><label class="label" for="capacity">ความจุแบตเตอรี่</label><input id="capacity" type="number" min="1" max="200" step=".1" value="58.3"><small>kWh</small></div><div class="field unit"><label class="label" for="power">กำลังไฟ AC</label><input id="power" type="number" min=".5" max="22" step=".1" value="6.6"><small>kW · สูงสุดอ้างอิงตามรุ่นรถ</small></div></div>
 <div class="two"><div class="field unit"><label class="label" for="eff">ประสิทธิภาพการชาร์จ</label><input id="eff" type="number" min="50" max="100" step="1" value="90"><small>% · สมมติฐานปรับได้</small></div><div class="field unit"><label class="label" for="unplug">ต้องการถอดสายชาร์จตอน</label><input id="unplug" type="time" value="07:00"><small>ระบบคำนวณเวลาเสียบชาร์จให้อัตโนมัติ</small></div></div>
 <div class="actions"><button class="btn primary" id="reset">คืนค่าเริ่มต้น</button><button class="btn secondary" id="swap">สลับ SOC</button></div>
 <p class="note">หมายเหตุ: เวลาเป็นค่าประมาณจากกำลังไฟเฉลี่ยที่ตั้งไว้ โดยคิดประสิทธิภาพ AC ตามสมมติฐาน ไม่ได้จำลองการลดกำลังชาร์จตามอุณหภูมิหรือระบบจัดการแบตเตอรี่</p></section>
-<section class="card"><h2>ผลการคำนวณ</h2><p class="sub">ผลลัพธ์จะเปลี่ยนทันทีเมื่อปรับค่า</p><div class="result"><div class="result-label">ESTIMATED CHARGING TIME</div><div class="time" id="duration">6 ชม. 01 นาที</div><div class="finish" id="finish">ชาร์จเสร็จประมาณ 04:01 น. (วันถัดไป)</div><div class="stats"><div class="stat"><span>พลังงานที่ต้องเติมเข้ารถ</span><strong id="energy">35.0 kWh</strong></div><div class="stat"><span>พลังงานจากไฟบ้านโดยประมาณ</span><strong id="inputEnergy">38.9 kWh</strong></div></div></div>
+<section class="card"><h2>ผลการคำนวณ</h2><p class="sub">ผลลัพธ์จะเปลี่ยนทันทีเมื่อปรับค่า</p><div class="result"><div class="result-label">ESTIMATED CHARGING TIME</div><div class="time" id="duration">6 ชม. 01 นาที</div><div class="finish" id="finish">ควรเสียบชาร์จประมาณ 01:00 น. (วันเดียวกัน)</div><div class="stats"><div class="stat"><span>พลังงานที่ต้องเติมเข้ารถ</span><strong id="energy">35.0 kWh</strong></div><div class="stat"><span>พลังงานจากไฟบ้านโดยประมาณ</span><strong id="inputEnergy">38.9 kWh</strong></div></div></div>
 <div class="progress"><div class="progresshead"><span>Charging progress</span><span id="rangeText">20% → 80%</span></div><div class="track"><div class="bar" id="bar" style="width:60%"></div></div></div>
 <div class="stats"><div class="stat"><span>ระดับแบตเตอรี่ที่เพิ่มขึ้น</span><strong id="increase">+60%</strong></div><div class="stat"><span>กำลังไฟที่ใช้คำนวณ</span><strong id="usedPower">6.6 kW</strong></div></div><p class="note" id="warning" aria-live="polite"></p></section></div>
 <div class="footer">EV AC CHARGE TIME ESTIMATOR · PERSONAL PROJECT</div></main>
 <script>
-const $=id=>document.getElementById(id),ids=['start','target','capacity','power','eff','unplug'];
+const $=id=>document.getElementById(id);
+const ids=['start','target','capacity','power','eff','unplug'];
 const fmt=n=>n.toLocaleString('en-US',{maximumFractionDigits:1,minimumFractionDigits:1});
 
-// Car specs
 const carSpecs={
   ora5:{name:'ORA 5 Ultra',battery:58.3,maxAC:6.6},
   geely:{name:'Geely EX2 Max',battery:39.4,maxAC:6.6},
   chery:{name:'Chery Q Quint',battery:41.3,maxAC:6.6}
 };
 
-// Update specs display when car selected
 function updateCarSpecs(carId){
   const car=carSpecs[carId];
   if(!car)return;
@@ -71,12 +69,31 @@ function updateCarSpecs(carId){
   calc();
 }
 
-// Car selector event
 $('carSelect').addEventListener('change',e=>updateCarSpecs(e.target.value));
 
-function calc(){let s=+$('start').value,t=+$('target').value,c=+$('capacity').value,p=+$('power').value,e=+$('eff').value;
-$('startVal').textContent=s+'%';$('targetVal').textContent=t+'%';$('rangeText').textContent=s+'% → '+t+'%';$('increase').textContent=(t>=s?'+':'')+(t-s)+'%';$('bar').style.width=Math.max(0,Math.min(100,t-s))+'%';
-if(t<=s){$('duration').textContent='—';$('finish').textContent='เป้าหมายต้องสูงกว่าแบตเตอรี่เริ่มต้น';$('energy').textContent='—';$('inputEnergy').textContent='—';$('warning').textContent='กรุณาปรับเปอร์เซ็นต์เป้าหมายให้มากกว่าค่าเริ่มต้น';return}
-if(!c||!p||!e||c<=0||p<=0||e<=0||e>100){$('duration').textContent='ตรวจสอบค่า';$('finish').textContent='กรุณากรอกค่าความจุ กำลังไฟ และประสิทธิภาพให้ถูกต้อง';$('warning').textContent='';return}
-let kwh=c*(t-s)/100,grid=kwh/(e/100),mins=Math.round(grid/p*60),h=Math.floor(mins/60),m=mins%60;
-$('duration').textContent=(h?`${h} ชม. `:'')+String(m).padStart(2,'0')+' นาที';$('energy').textContent=fmt(kwh)+' kWh';$('inputEnergy').textContent=fmt(grid)+' kWh';$('usedPower').textContent
+function calc(){
+  let s=+$('start').value,t=+$('target').value,c=+$('capacity').value,p=+$('power').value,e=+$('eff').value;
+  $('startVal').textContent=s+'%';
+  $('targetVal').textContent=t+'%';
+  $('rangeText').textContent=s+'% → '+t+'%';
+  $('increase').textContent=(t>=s?'+':'')+(t-s)+'%';
+  $('bar').style.width=Math.max(0,Math.min(100,t-s))+'%';
+  if(t<=s){
+    $('duration').textContent='—';
+    $('finish').textContent='เป้าหมายต้องสูงกว่าแบตเตอรี่เริ่มต้น';
+    $('energy').textContent='—';
+    $('inputEnergy').textContent='—';
+    $('warning').textContent='กรุณาปรับเปอร์เซ็นต์เป้าหมายให้มากกว่าค่าเริ่มต้น';
+    return;
+  }
+  if(!c||!p||!e||c<=0||p<=0||e<=0||e>100){
+    $('duration').textContent='ตรวจสอบค่า';
+    $('finish').textContent='กรุณากรอกค่าความจุ กำลังไฟ และประสิทธิภาพให้ถูกต้อง';
+    $('warning').textContent='';
+    return;
+  }
+  let kwh=c*(t-s)/100,grid=kwh/(e/100),mins=Math.round(grid/p*60),h=Math.floor(mins/60),m=mins%60;
+  $('duration').textContent=(h?h+' ชม. ':'')+String(m).padStart(2,'0')+' นาที';
+  $('energy').textContent=fmt(kwh)+' kWh';
+  $('inputEnergy').textContent=fmt(grid)+' kWh';
+  $('usedPower').textContent=fmt(p)+' kW';
